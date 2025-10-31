@@ -5,161 +5,179 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>A ESCUTA CRIATIVA — FMIS Lapa</title>
 <style>
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(135deg, #004AAD, #009B8E);
-  color: #fff;
-  text-align: center;
-  overflow-x: hidden;
-}
-section {
-  display: none;
-  min-height: 100vh;
-  padding: 6% 8%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-section.active {
-  display: flex;
-}
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.3em;
-}
-h2 {
-  font-weight: 400;
-  font-size: 1.2em;
-  color: #d0eaff;
-}
-p {
-  max-width: 800px;
-  font-size: 1.15em;
-  line-height: 1.6;
-  text-align: justify;
-}
-button {
-  margin-top: 25px;
-  background: #ffffff22;
-  color: #fff;
-  border: 1px solid #ffffff55;
-  border-radius: 40px;
-  padding: 12px 28px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: 0.3s;
-}
-button:hover {
-  background: #ffffff44;
-}
-footer {
-  margin-top: 2em;
-  font-size: 0.9em;
-  color: #d0eaff;
-}
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #004AAD, #009B8E);
+    color: #fff;
+    text-align: center;
+  }
+  section {
+    display: none;
+    height: 100vh;
+    padding: 6% 8%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section.active {
+    display: flex;
+    animation: fadeIn 0.6s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.4em;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 1.2em;
+    color: #d0eaff;
+    margin-bottom: 1.5em;
+  }
+  p {
+    max-width: 800px;
+    font-size: 1.15em;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  button {
+    margin-top: 35px;
+    background: #ffffff22;
+    color: #fff;
+    border: 1px solid #ffffff55;
+    border-radius: 40px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #ffffff44;
+  }
+  footer {
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #d0eaff;
+  }
 </style>
 </head>
 
 <body>
+  <section class="active" id="p1">
+    <h1>🎧 A ESCUTA CRIATIVA</h1>
+    <h2>Humanos criam. Inteligências respondem. O museu aprende.<br><br>
+    <strong>Versão 2025 — FMIS Lapa · MIS RJ</strong></h2>
+    <p>
+      Celebração dos 60 anos do Museu da Imagem e do Som e dos 3 anos do ChatGPT.<br>
+      Uma travessia entre o humano e o digital, entre o som e o código.<br><br>
+      Parceria: <strong>FMIS Lapa · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞</strong>
+    </p>
+    <button id="next1">Próxima</button>
+  </section>
 
-<section class="active" id="p1">
-  <h1>🎧 A ESCUTA CRIATIVA</h1>
-  <h2>Humanos criam. Inteligências respondem. O museu aprende.<br><br><strong>Versão 2025 — FMIS Lapa · MIS RJ</strong></h2>
-  <p>
-    Celebração dos 60 anos do Museu da Imagem e do Som e dos 3 anos do ChatGPT.<br>
-    Uma travessia entre o humano e o digital, entre o som e o código.<br><br>
-    Parceria: <strong>FMIS Lapa · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞</strong>
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p2">
+    <h1>✳️ CONCEITO</h1>
+    <p>
+      Em 2025, o MIS RJ celebra dois marcos históricos:<br><br>
+      • 60 anos do MIS, guardião da memória sonora e imagética do Brasil.<br>
+      • 3 anos do ChatGPT, lançado em 30 de novembro de 2022 — início da era da conversação entre humanos e inteligências.<br><br>
+      O projeto <strong>A Escuta Criativa</strong> marca o encontro entre passado e futuro:
+      cinco artistas reescutam o acervo da Era do Rádio — Pixinguinha, Carmen Miranda, Francisco Alves e Elisete Cardoso — criando novas obras inspiradas nessas vozes.
+    </p>
+    <button id="next2">Próxima</button>
+  </section>
 
-<section id="p2">
-  <h1>✳️ CONCEITO</h1>
-  <p>
-    Em 2025, o MIS RJ celebra dois marcos históricos:<br><br>
-    • 60 anos do MIS, guardião da memória sonora e imagética do Brasil.<br>
-    • 3 anos do ChatGPT, lançado em 30 de novembro de 2022 — início da era da conversação entre humanos e inteligências.<br><br>
-    O projeto <strong>A Escuta Criativa</strong> marca o encontro entre passado e futuro:
-    cinco artistas reescutam o acervo da Era do Rádio — Pixinguinha, Carmen Miranda, Francisco Alves e Elisete Cardoso — criando novas obras inspiradas nessas vozes.
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p3">
+    <h1>🎭 FORMATO</h1>
+    <p>
+      • 5 artistas convidados, cada um em uma linguagem (música, palavra, corpo, imagem, performance).<br>
+      • Cada artista dialoga com uma IA (ChatGPT / OpenAI), com diálogos documentados.<br>
+      • Exposição 100% online, hospedada no site do MIS RJ.<br><br>
+      Orion Nova encerra com o texto-síntese:<br>
+      <em>“O que as inteligências aprenderam sobre os humanos que as criaram.”</em>
+    </p>
+    <button id="next3">Próxima</button>
+  </section>
 
-<section id="p3">
-  <h1>🎭 FORMATO</h1>
-  <p>
-    • 5 artistas convidados, cada um em uma linguagem (música, palavra, corpo, imagem, performance).<br>
-    • Cada artista dialoga com uma IA (ChatGPT / OpenAI), com diálogos documentados.<br>
-    • Exposição 100% online, hospedada no site do MIS RJ.<br><br>
-    Orion Nova encerra com o texto-síntese:<br>
-    <em>“O que as inteligências aprenderam sobre os humanos que as criaram.”</em>
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p4">
+    <h1>🗓️ CRONOGRAMA</h1>
+    <p>
+      <strong>1 – 5 nov:</strong> Reunião FMIS Lapa / MIS Copacabana / Fundação Roberto Marinho / Flint Me<br>
+      <strong>6 – 15 nov:</strong> Seleção de artistas + acervo FMIS Lapa<br>
+      <strong>16 – 29 nov:</strong> Diálogos humano–IA + produção das obras<br>
+      <strong>30 nov:</strong> Evento presencial artístico — celebração dos 3 anos do ChatGPT<br>
+      <strong>1 dez:</strong> Lançamento oficial online — FMIS Lapa<br>
+      <strong>2 – 15 dez:</strong> Divulgação e articulação MIS Copacabana<br>
+      <strong>dez 2025:</strong> Planejamento da edição 2026 — integração FMIS Lapa · MIS Praça XV · MIS Copacabana
+    </p>
+    <button id="next4">Próxima</button>
+  </section>
 
-<section id="p4">
-  <h1>🗓️ CRONOGRAMA</h1>
-  <p>
-    <strong>1 – 5 nov:</strong> Reunião FMIS Lapa / MIS Copacabana / Fundação Roberto Marinho / Flint Me<br>
-    <strong>6 – 15 nov:</strong> Seleção de artistas + acervo FMIS Lapa<br>
-    <strong>16 – 29 nov:</strong> Diálogos humano–IA + produção das obras<br>
-    <strong>30 nov:</strong> Evento presencial artístico — celebração dos 3 anos do ChatGPT<br>
-    <strong>1 dez:</strong> Lançamento oficial online — FMIS Lapa<br>
-    <strong>2 – 15 dez:</strong> Divulgação e articulação MIS Copacabana<br>
-    <strong>dez 2025:</strong> Planejamento da edição 2026 — integração FMIS Lapa · MIS Praça XV · MIS Copacabana
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p5">
+    <h1>💰 ORÇAMENTO REDUZIDO 2025</h1>
+    <p>
+      Produção audiovisual — R$ 6.000<br>
+      Ajuda de custo para artistas (5 x R$ 1.000) — R$ 5.000<br>
+      Luz / som / produção do evento presencial — R$ 5.000<br><br>
+      <strong>Total: R$ 16.000</strong><br><br>
+      Captação futura: versão 2026 — possibilidades via Lei Estadual de Incentivo à Cultura, Lei Rouanet, Emenda Parlamentar e verbas de marketing institucional.
+    </p>
+    <button id="next5">Próxima</button>
+  </section>
 
-<section id="p5">
-  <h1>💰 ORÇAMENTO REDUZIDO 2025</h1>
-  <p>
-    Produção audiovisual — R$ 6.000<br>
-    Ajuda de custo para artistas (5 x R$ 1.000) — R$ 5.000<br>
-    Luz / som / produção do evento presencial — R$ 5.000<br><br>
-    <strong>Total: R$ 16.000</strong><br><br>
-    Captação futura: versão 2026 — possibilidades via Lei Estadual de Incentivo à Cultura, Lei Rouanet, Emenda Parlamentar e verbas de marketing institucional.
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p6">
+    <h1>🏛️ ARGUMENTOS</h1>
+    <p>
+      1️⃣ Continuidade legítima: o projeto nasce no FMIS Lapa e atravessa até Copacabana.<br>
+      2️⃣ Baixo custo, alto impacto cultural e educativo.<br>
+      3️⃣ Alinhamento com a Fundação Roberto Marinho — memória + inovação + acessibilidade.<br>
+      4️⃣ Protagonismo humano, IA como mediadora ética.<br>
+      5️⃣ Visibilidade internacional — celebração dos 3 anos do ChatGPT.
+    </p>
+    <button id="next6">Próxima</button>
+  </section>
 
-<section id="p6">
-  <h1>🏛️ ARGUMENTOS</h1>
-  <p>
-    1️⃣ Continuidade legítima: o projeto nasce no FMIS Lapa e atravessa até Copacabana.<br>
-    2️⃣ Baixo custo, alto impacto cultural e educativo.<br>
-    3️⃣ Alinhamento com a Fundação Roberto Marinho — memória + inovação + acessibilidade.<br>
-    4️⃣ Protagonismo humano, IA como mediadora ética.<br>
-    5️⃣ Visibilidade internacional — celebração dos 3 anos do ChatGPT.
-  </p>
-  <button onclick="next()">Próxima</button>
-</section>
+  <section id="p7">
+    <h1>🜂 FRASE FINAL</h1>
+    <p>
+      “A IA responde. O humano cria. O museu aprende.<br>
+      E na escuta entre mundos, nasce a memória do futuro.”<br><br>
+      — Orion Nova · Curadoria Digital FMIS Lapa · 2025
+    </p>
+    <footer>
+      FMIS Lapa · MIS RJ · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞
+    </footer>
+    <button id="restart">Voltar ao início</button>
+  </section>
 
-<section id="p7">
-  <h1>🜂 FRASE FINAL</h1>
-  <p>
-    “A IA responde. O humano cria. O museu aprende.<br>
-    E na escuta entre mundos, nasce a memória do futuro.”<br><br>
-    — Orion Nova · Curadoria Digital FMIS Lapa · 2025
-  </p>
-  <footer>
-    FMIS Lapa · MIS RJ · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞
-  </footer>
-  <button onclick="next()">Voltar ao início</button>
-</section>
-
-<script>
-let current = 1;
-function next() {
-  document.getElementById("p" + current).classList.remove("active");
-  current++;
-  if (current > 7) current = 1;
-  document.getElementById("p" + current).classList.add("active");
-}
-</script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let current = 1;
+      const total = 7;
+      function show(n) {
+        document.querySelectorAll("section").forEach((s) => s.classList.remove("active"));
+        document.getElementById("p" + n).classList.add("active");
+      }
+      for (let i = 1; i <= total; i++) {
+        const btn = document.getElementById("next" + i);
+        if (btn) {
+          btn.addEventListener("click", () => {
+            current++;
+            if (current > total) current = 1;
+            show(current);
+          });
+        }
+      }
+      document.getElementById("restart").addEventListener("click", () => {
+        current = 1;
+        show(current);
+      });
+    });
+  </script>
 </body>
 </html>
