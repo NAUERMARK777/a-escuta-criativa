@@ -9,66 +9,87 @@
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     background: linear-gradient(135deg, #004AAD, #009B8E);
-    color: #fff;
+    color: #333;
     text-align: center;
   }
-  section {
+
+  .page {
     display: none;
-    height: 100vh;
-    padding: 6% 8%;
+    min-height: 100vh;
+    padding: 6%;
     box-sizing: border-box;
-    flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-  section.active {
+
+  .page.active {
     display: flex;
-    animation: fadeIn 0.6s ease;
+    animation: fadeIn 0.5s ease;
   }
+
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
   }
+
+  .box {
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    max-width: 850px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+  }
+
   h1 {
-    font-size: 2.4em;
+    color: #004AAD;
+    font-size: 2.2em;
     margin-bottom: 0.4em;
   }
+
   h2 {
     font-weight: 400;
-    font-size: 1.2em;
-    color: #d0eaff;
+    font-size: 1.15em;
+    color: #009B8E;
     margin-bottom: 1.5em;
   }
+
   p {
-    max-width: 800px;
-    font-size: 1.15em;
+    font-size: 1.1em;
     line-height: 1.6;
     text-align: justify;
   }
+
   button {
-    margin-top: 35px;
-    background: #ffffff22;
+    margin-top: 30px;
+    background: linear-gradient(90deg, #004AAD, #009B8E);
     color: #fff;
-    border: 1px solid #ffffff55;
-    border-radius: 40px;
-    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 35px;
     cursor: pointer;
     font-size: 1em;
     transition: 0.3s;
   }
+
   button:hover {
-    background: #ffffff44;
+    transform: scale(1.04);
+    background: linear-gradient(90deg, #0057c0, #00b19d);
   }
+
   footer {
     margin-top: 2em;
     font-size: 0.9em;
-    color: #d0eaff;
+    color: #555;
   }
 </style>
 </head>
 
 <body>
-  <section class="active" id="p1">
+
+<div class="page active" id="p1">
+  <div class="box">
     <h1>🎧 A ESCUTA CRIATIVA</h1>
     <h2>Humanos criam. Inteligências respondem. O museu aprende.<br><br>
     <strong>Versão 2025 — FMIS Lapa · MIS RJ</strong></h2>
@@ -77,10 +98,12 @@
       Uma travessia entre o humano e o digital, entre o som e o código.<br><br>
       Parceria: <strong>FMIS Lapa · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞</strong>
     </p>
-    <button id="next1">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p2">
+<div class="page" id="p2">
+  <div class="box">
     <h1>✳️ CONCEITO</h1>
     <p>
       Em 2025, o MIS RJ celebra dois marcos históricos:<br><br>
@@ -89,10 +112,12 @@
       O projeto <strong>A Escuta Criativa</strong> marca o encontro entre passado e futuro:
       cinco artistas reescutam o acervo da Era do Rádio — Pixinguinha, Carmen Miranda, Francisco Alves e Elisete Cardoso — criando novas obras inspiradas nessas vozes.
     </p>
-    <button id="next2">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p3">
+<div class="page" id="p3">
+  <div class="box">
     <h1>🎭 FORMATO</h1>
     <p>
       • 5 artistas convidados, cada um em uma linguagem (música, palavra, corpo, imagem, performance).<br>
@@ -101,10 +126,12 @@
       Orion Nova encerra com o texto-síntese:<br>
       <em>“O que as inteligências aprenderam sobre os humanos que as criaram.”</em>
     </p>
-    <button id="next3">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p4">
+<div class="page" id="p4">
+  <div class="box">
     <h1>🗓️ CRONOGRAMA</h1>
     <p>
       <strong>1 – 5 nov:</strong> Reunião FMIS Lapa / MIS Copacabana / Fundação Roberto Marinho / Flint Me<br>
@@ -115,10 +142,12 @@
       <strong>2 – 15 dez:</strong> Divulgação e articulação MIS Copacabana<br>
       <strong>dez 2025:</strong> Planejamento da edição 2026 — integração FMIS Lapa · MIS Praça XV · MIS Copacabana
     </p>
-    <button id="next4">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p5">
+<div class="page" id="p5">
+  <div class="box">
     <h1>💰 ORÇAMENTO REDUZIDO 2025</h1>
     <p>
       Produção audiovisual — R$ 6.000<br>
@@ -127,10 +156,12 @@
       <strong>Total: R$ 16.000</strong><br><br>
       Captação futura: versão 2026 — possibilidades via Lei Estadual de Incentivo à Cultura, Lei Rouanet, Emenda Parlamentar e verbas de marketing institucional.
     </p>
-    <button id="next5">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p6">
+<div class="page" id="p6">
+  <div class="box">
     <h1>🏛️ ARGUMENTOS</h1>
     <p>
       1️⃣ Continuidade legítima: o projeto nasce no FMIS Lapa e atravessa até Copacabana.<br>
@@ -139,10 +170,12 @@
       4️⃣ Protagonismo humano, IA como mediadora ética.<br>
       5️⃣ Visibilidade internacional — celebração dos 3 anos do ChatGPT.
     </p>
-    <button id="next6">Próxima</button>
-  </section>
+    <button onclick="nextPage()">Próxima</button>
+  </div>
+</div>
 
-  <section id="p7">
+<div class="page" id="p7">
+  <div class="box">
     <h1>🜂 FRASE FINAL</h1>
     <p>
       “A IA responde. O humano cria. O museu aprende.<br>
@@ -152,32 +185,26 @@
     <footer>
       FMIS Lapa · MIS RJ · Fundação Roberto Marinho · OpenAI / ChatGPT Brasil · Flint Me · EloEssencial∞
     </footer>
-    <button id="restart">Voltar ao início</button>
-  </section>
+    <button onclick="restart()">Voltar ao início</button>
+  </div>
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      let current = 1;
-      const total = 7;
-      function show(n) {
-        document.querySelectorAll("section").forEach((s) => s.classList.remove("active"));
-        document.getElementById("p" + n).classList.add("active");
-      }
-      for (let i = 1; i <= total; i++) {
-        const btn = document.getElementById("next" + i);
-        if (btn) {
-          btn.addEventListener("click", () => {
-            current++;
-            if (current > total) current = 1;
-            show(current);
-          });
-        }
-      }
-      document.getElementById("restart").addEventListener("click", () => {
-        current = 1;
-        show(current);
-      });
-    });
-  </script>
+<script>
+  let current = 1;
+  function showPage(n) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById("p" + n).classList.add("active");
+  }
+  function nextPage() {
+    current++;
+    if (current > 7) current = 1;
+    showPage(current);
+  }
+  function restart() {
+    current = 1;
+    showPage(current);
+  }
+</script>
+
 </body>
 </html>
