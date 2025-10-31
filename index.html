@@ -1,182 +1,901 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>A ESCUTA CRIATIVA — FMIS RJ</title>
-<meta name="description" content="Projeto A Escuta Criativa — FMIS RJ · Curadoria Marcos Nauer & Orion Nova (OpenAI Brasil). Humanos criam, inteligências respondem, o museu aprende.">
-<meta property="og:title" content="A Escuta Criativa — FMIS RJ">
-<meta property="og:description" content="Humanos criam. Inteligências respondem. O museu aprende.">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/19/Museu_da_Imagem_e_do_Som_-_Copacabana.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://nauermark777.github.io/a-escuta-criativa/">
-<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1b/ChatGPT_logo.svg">
-<style>
-  :root{
-    --azul:#0B1D3A;
-    --verde:#2AB57D;
-    --dourado:#FFBA4A;
-    --fundo:#E9EDF7;
-    --texto:#1e2c44;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--texto);background:var(--fundo);overflow:hidden}
-  .slide{display:none;position:absolute;top:0;left:0;width:100%;height:100%;overflow:auto;padding:60px 10%;background:#fff;transition:opacity .6s}
-  .slide.active{display:block;opacity:1;animation:fadeIn .6s ease-in-out}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  h1{color:var(--azul);font-size:54px;margin:0 0 20px;line-height:1.2;text-align:center}
-  h2{color:var(--verde);font-size:36px;margin:20px 0;line-height:1.3;text-align:center}
-  p,ul,li{font-size:22px;line-height:1.65}
-  ul{margin-left:28px}
-  li{margin:10px 0}
-  table{width:100%;border-collapse:collapse;margin:25px 0;font-size:20px;box-shadow:0 0 6px rgba(0,0,0,.05)}
-  th,td{border:1px solid #dbe3f0;padding:14px 18px}
-  th{background:#f2f7fb;text-align:left;color:var(--azul);font-size:22px}
-  td strong{color:var(--verde)}
-  .hero{background:linear-gradient(135deg,var(--azul),#163b66 50%,var(--verde) 120%);color:#fff;text-align:center;padding:90px 60px;border-radius:16px}
-  .hero h1,.hero h2{color:#fff}
-  .tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:8px;display:inline-block;margin:5px;font-size:18px}
-  .nav{position:fixed;bottom:20px;left:0;right:0;display:flex;justify-content:space-between;max-width:1100px;margin:auto;padding:0 40px}
-  button{background:var(--verde);border:none;color:#fff;padding:14px 26px;font-size:20px;border-radius:8px;cursor:pointer;transition:.3s;font-weight:500}
-  button:hover{background:#229e6e}
-  .disabled{background:#ccc;cursor:not-allowed}
-  .section-highlight{background:linear-gradient(to right,#e8f6f1,#ffffff);padding:40px;border-radius:14px;margin-top:20px}
-  .fecho{background:linear-gradient(135deg,var(--azul),var(--verde));color:#fff;text-align:center;padding:80px;border-radius:16px;margin-top:30px}
-  .fecho p{font-size:24px;line-height:1.6}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Escuta Criativa - Pitch Deck</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+
+        /* Slide 1 - CAPA */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide-1 .content {
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .slide-1 .tagline {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .slide-1 h1 {
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+        }
+
+        .slide-1 .celebration {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+        }
+
+        .slide-1 .parceiros {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-top: 2rem;
+        }
+
+        /* Slide 2 - POR QUE AGORA */
+        .slide-2 {
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+
+        .why-now {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .why-now h1 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            color: #fbbf24;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .why-item {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #f97316;
+        }
+
+        .why-item h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .why-item p {
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Slide 3 - O DESAFIO */
+        .slide-3 {
+            background: #0f0f23;
+        }
+
+        .centered-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .big-question {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fbbf24;
+            line-height: 1.3;
+        }
+
+        .answer {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        /* Slide 4 - CONCEITO */
+        .slide-4 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .concept {
+            max-width: 900px;
+        }
+
+        .concept h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .concept-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .concept-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .concept-box {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .concept-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Slide 5 - A TRAVESSIA */
+        .slide-5 {
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+
+        .split-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .location {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .location-icon {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            opacity: 0.5;
+            letter-spacing: 0.1em;
+        }
+
+        .location h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f97316;
+        }
+
+        .location p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .arrow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: #f97316;
+        }
+
+        /* Slide 6 - O PAPEL DA IA */
+        .slide-6 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+        }
+
+        .ai-section {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .ai-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ai-name {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #fbbf24, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .ai-roles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .ai-role {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .ai-role .label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+            letter-spacing: 0.1em;
+        }
+
+        /* Slide 7 - OS ARTISTAS */
+        .slide-7 {
+            background: #2d1b4e;
+        }
+
+        .artists {
+            max-width: 1000px;
+        }
+
+        .artists h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .artists-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .acervo-destaque {
+            background: rgba(251, 191, 36, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #fbbf24;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .acervo-destaque h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        /* Slide 8 - CRONOGRAMA */
+        .slide-8 {
+            background: #191970;
+        }
+
+        .timeline {
+            max-width: 1000px;
+        }
+
+        .timeline h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .timeline-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .timeline-dot {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Slide 9 - ORÇAMENTO */
+        .slide-9 {
+            background: linear-gradient(to bottom right, #ee0979, #ff6a00);
+        }
+
+        .budget {
+            max-width: 900px;
+        }
+
+        .budget h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .budget-table {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .budget-row {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1fr;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            gap: 2rem;
+        }
+
+        .budget-row:last-child {
+            border-bottom: none;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .budget-category {
+            font-weight: 600;
+        }
+
+        .budget-note {
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        /* Slide 10 - IMPACTO */
+        .slide-10 {
+            background: #1a1a2e;
+        }
+
+        .impact {
+            max-width: 900px;
+        }
+
+        .impact h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #f97316;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: rgba(249, 115, 22, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #f97316;
+        }
+
+        .impact-card h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .impact-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Slide 11 - ANTECIPANDO QUESTÕES */
+        .slide-11 {
+            background: #0f0f23;
+        }
+
+        .faq {
+            max-width: 900px;
+        }
+
+        .faq h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid #fbbf24;
+        }
+
+        .faq-item .question {
+            color: #fbbf24;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .faq-item .response {
+            opacity: 0.8;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* Slide 12 - LEGADO 2026 */
+        .slide-12 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .legacy {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .legacy h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .legacy-intro {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .legacy-item {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .legacy-item h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .legacy-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Slide 13 - SUSTENTABILIDADE */
+        .slide-13 {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .sustainability {
+            max-width: 900px;
+        }
+
+        .sustainability h1 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .sustainability-boxes {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .sustainability-box {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sustainability-box h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .sustainability-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sustainability-box li {
+            padding: 0.5rem 0;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .sustainability-box li::before {
+            content: "→ ";
+            color: #fbbf24;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Slide 14 - FRASE FINAL */
+        .slide-14 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f23 100%);
+        }
+
+        .final-slide {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .final-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #f97316;
+        }
+
+        .final-quote-main {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-style: italic;
+            color: #fbbf24;
+        }
+
+        .final-signature {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 3rem;
+        }
+
+        /* Slide 15 - PRÓXIMOS PASSOS */
+        .slide-15 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .next-steps {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .next-steps h1 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cta-boxes {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .cta-box {
+            background: rgba(255,255,255,0.2);
+            padding: 1.8rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .final-quote {
+            margin-top: 3rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .signature {
+            margin-top: 2rem;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .slide {
+                page-break-after: always;
+            }
+            
+            .slide:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Slide 1: CAPA -->
+    <section class="slide slide-1">
+        <div class="content">
+            <p class="tagline">Humanos criam. Inteligências respondem.</p>
+            <h1>A ESCUTA<br>CRIATIVA</h1>
+            <p class="subtitle">Um projeto de co-criação humano + IA sobre a transição do<br>FMIS Lapa | Praça XV para MIS COPACABANA</p>
+        </div>
+        <div class="slide-number">01</div>
+    </section>
 
-<div class="slide active">
-  <div class="hero">
-    <h1>🎧 A ESCUTA CRIATIVA</h1>
-    <h2>Humanos criam. Inteligências respondem.<br>O museu aprende.</h2>
-    <p style="font-size:22px;">Versão 2025 — FMIS RJ</p>
-    <p>
-      <span class="tag">FMIS Lapa</span>
-      <span class="tag">Fundação Roberto Marinho</span>
-      <span class="tag">OpenAI · ChatGPT Brasil</span>
-      <span class="tag">Flint Me</span>
-      <span class="tag">EloEssencial∞</span>
-    </p>
-  </div>
-</div>
+    <!-- Slide 2: POR QUE AGORA -->
+    <section class="slide slide-2">
+        <div class="why-now">
+            <h1>POR QUE AGORA?</h1>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>60 anos do FMIS RJ</h3>
+                    <p>Guardião da memória sonora e imagética do Brasil. Momento histórico de transição e renovação.</p>
+                </div>
+                <div class="why-item">
+                    <h3>3 anos do ChatGPT</h3>
+                    <p>Lançado em 30/11/2022. Celebrações em 30/11 e 01/12/2025. Marco da IA generativa no mundo.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Liderança brasileira</h3>
+                    <p>O Brasil pode liderar a convivência humano–IA com ética, afeto e cultura viva.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">02</div>
+    </section>
 
-<div class="slide">
-  <h2>Por que agora?</h2>
-  <div class="section-highlight">
-  <p><strong>60 anos do FMIS RJ</strong> — guardião da memória sonora e imagética do Brasil.</p>
-  <p><strong>3 anos do ChatGPT</strong> — lançado em 30/11/2022 · celebrações em 30/11 e 01/12.</p>
-  <p>O Brasil pode liderar a <strong>convivência humano–IA</strong> com ética, afeto e cultura viva.</p>
-  </div>
-</div>
+    <!-- Slide 3: O DESAFIO -->
+    <section class="slide slide-3">
+        <div class="centered-content">
+            <p class="big-question">Como um museu se transforma?</p>
+            <p class="answer">Não é apenas mudança de endereço. É a passagem simbólica entre guardar o passado e acolher o futuro. É transformar acervo em narrativa viva. É documentar a travessia.</p>
+        </div>
+        <div class="slide-number">03</div>
+    </section>
 
-<div class="slide">
-  <h2>Conceito</h2>
-  <div class="section-highlight">
-  <p>Cinco artistas brasileiros reescutam o acervo da <strong>Era do Rádio</strong> — Pixinguinha, Carmen Miranda, Francisco Alves, Elisete Cardoso — e criam novas obras inspiradas nessas vozes.</p>
-  <p>Cada artista dialoga com o <strong>ChatGPT (OpenAI)</strong> — não para “fazer a obra”, mas para <em>refletir</em>, <em>contextualizar</em> e <em>provocar insight</em>.</p>
-  <p><strong>Curadoria humana:</strong> Marcos Nauer · <strong>Curadoria digital:</strong> Orion Nova</p>
-  </div>
-</div>
+    <!-- Slide 4: CONCEITO -->
+    <section class="slide slide-4">
+        <div class="concept">
+            <h1>CONCEITO</h1>
+            <p class="concept-text">Cinco artistas brasileiros reescutam o acervo da FMIS que será enviado ao MIS COPA — Pixinguinha, Carmen Miranda, Almirante — e criam novas obras inspiradas nessas vozes.</p>
+            <div class="concept-highlights">
+                <div class="concept-box">
+                    <h3>Diálogo com ChatGPT</h3>
+                    <p>Cada artista dialoga com o ChatGPT (OpenAI) — não para "fazer a obra", mas para refletir, contextualizar e provocar insight.</p>
+                </div>
+                <div class="concept-box">
+                    <h3>Curadoria Dupla</h3>
+                    <p><strong>Curadoria humana:</strong> Marcos Nauer<br><strong>Curadoria digital:</strong> Orion Nova</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">04</div>
+    </section>
 
-<div class="slide">
-  <h2>🌉 A Travessia</h2>
-  <div class="section-highlight">
-  <ul>
-    <li>FMIS Lapa — memória e som, a voz do Brasil.</li>
-    <li>MIS Copacabana — imagem e futuro, diálogo arte + tecnologia.</li>
-    <li>A ponte é humana; a travessia é digital; o museu aprende com ambos.</li>
-  </ul>
-  </div>
-</div>
+    <!-- Slide 5: A TRAVESSIA -->
+    <section class="slide slide-5">
+        <div class="split-content">
+            <div class="location">
+                <div class="location-icon">MEMÓRIA</div>
+                <h2>FMIS LAPA</h2>
+                <p>Memória e som<br>A voz do Brasil<br>60 anos de história</p>
+            </div>
+            <div class="location">
+                <div class="location-icon">FUTURO</div>
+                <h2>MIS COPACABANA</h2>
+                <p>Imagem e futuro<br>Diálogo arte + tecnologia<br>Nova era digital</p>
+            </div>
+        </div>
+        <div class="arrow">→</div>
+        <p style="position: absolute; bottom: 4rem; left: 50%; transform: translateX(-50%); text-align: center; opacity: 0.8; font-size: 1.1rem;">A ponte é humana; a travessia é digital; o museu aprende com ambos</p>
+        <div class="slide-number">05</div>
+    </section>
 
-<div class="slide">
-  <h2>Cronograma (2025)</h2>
-  <div class="section-highlight">
-  <table>
-    <thead><tr><th>Etapa</th><th>Período</th><th>Ação</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Reunião institucional</strong></td><td>out 2025</td><td>Articulação MIS Copacabana / Fundação Roberto Marinho / Flint Me</td></tr>
-      <tr><td>Seleção de artistas + acervo</td><td>1–15 nov</td><td>Curadoria e convites</td></tr>
-      <tr><td>Produção remota</td><td>16–29 nov</td><td>Criação e gravação das obras</td></tr>
-      <tr><td><strong>Evento presencial artístico</strong></td><td><strong>30 nov</strong></td><td>Comemoração dos 3 anos do ChatGPT — ação performática</td></tr>
-      <tr><td><strong>Lançamento online</strong></td><td><strong>01 dez</strong></td><td>Travessia Lapa → Copacabana</td></tr>
-      <tr><td>Planejamento 2026</td><td>dez 2025</td><td>Ampliação do legado de travessia</td></tr>
-    </tbody>
-  </table>
-  </div>
-</div>
+    <!-- Slide 6: O PAPEL DA IA -->
+    <section class="slide slide-6">
+        <div class="ai-section">
+            <h1>O PAPEL DA IA</h1>
+            <div class="ai-name">ORION NOVA</div>
+            <p style="font-size: 1.3rem; margin-bottom: 3rem;">A IA do MIS não é ferramenta. É coautora, mediadora e parceira criativa.</p>
+            <div class="ai-roles">
+                <div class="ai-role">
+                    <div class="label">PARCEIRA</div>
+                    <h3>COLABORAÇÃO</h3>
+                    <p>Dialoga, sugere, questiona o processo criativo</p>
+                </div>
+                <div class="ai-role">
+                    <div class="label">COAUTORA</div>
+                    <h3>AUTORIA</h3>
+                    <p>Tem crédito nas obras. Autoria compartilhada e transparente</p>
+                </div>
+                <div class="ai-role">
+                    <div class="label">MEDIADORA</div>
+                    <h3>REFLEXÃO</h3>
+                    <p>Ajuda artistas a pensar diferente sobre seu próprio trabalho</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">06</div>
+    </section>
 
-<div class="slide">
-  <h2>Orçamento Base</h2>
-  <div class="section-highlight">
-  <table>
-    <thead><tr><th>Categoria</th><th>Descrição</th><th>Estimativa (R$)</th></tr></thead>
-    <tbody id="orcamento">
-      <tr><td>🎬 Produção Audiovisual</td><td>Gravação e edição de 5 vídeos</td><td>6000</td></tr>
-      <tr><td>💡 Luz & Som</td><td>Iluminação, som e apoio técnico</td><td>5000</td></tr>
-      <tr><td>🎭 Artistas</td><td>Ajuda de custo simbólica</td><td>5000</td></tr>
-      <tr><td>🧾 Reserva Técnica</td><td>Imprevistos</td><td>3000</td></tr>
-    </tbody>
-  </table>
-  <p style="font-size:24px;text-align:center;margin-top:10px"><strong>Total estimado: R$ <span id="total"></span></strong></p>
-  </div>
-</div>
+    <!-- Slide 7: OS ARTISTAS -->
+    <section class="slide slide-7">
+        <div class="artists">
+            <h1>OS 5 ARTISTAS</h1>
+            <p class="artists-intro">Cinco artistas brasileiros com olhares diversos — visuais, performers, escritores, músicos — reescutam o acervo histórico do FMIS e criam novas obras que atravessam gerações.</p>
+            <div class="acervo-destaque">
+                <h3>ACERVO EM DESTAQUE</h3>
+                <p style="font-size: 1.2rem; margin-top: 1rem;">Pixinguinha · Carmen Miranda · Almirante</p>
+                <p style="margin-top: 1rem; opacity: 0.8;">Vozes que moldaram a cultura brasileira, agora reinventadas por novas gerações</p>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; opacity: 0.7; font-size: 1.05rem;">Seleção curatorial de artistas contemporâneos em diálogo com a história</p>
+        </div>
+        <div class="slide-number">07</div>
+    </section>
 
-<div class="slide">
-  <h2>Sustentabilidade</h2>
-  <div class="section-highlight">
-  <ul>
-    <li><strong>Parcerias:</strong> FMIS RJ, Fundação Roberto Marinho, OpenAI Brasil, Flint Me.</li>
-    <li><strong>Infraestrutura FMIS RJ:</strong> espaço e técnicos.</li>
-    <li><strong>Captação futura:</strong> via Lei de Incentivo à Cultura, Rouanet, Emendas e Marketing.</li>
-  </ul>
-  </div>
-</div>
+    <!-- Slide 8: CRONOGRAMA -->
+    <section class="slide slide-8">
+        <div class="timeline">
+            <h1>CRONOGRAMA 2025</h1>
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-dot">OUT 2025</div>
+                    <div class="timeline-content">
+                        <h3>Reunião Institucional</h3>
+                        <p>Articulação MIS Copacabana / Fundação Roberto Marinho / Flint Me / OpenAI Brasil</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">1-15 NOV</div>
+                    <div class="timeline-content">
+                        <h3>Seleção de Artistas + Acervo</h3>
+                        <p>Curadoria e convites. Definição das obras do acervo a serem reescutadas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">16-29 NOV</div>
+                    <div class="timeline-content">
+                        <h3>Produção Remota</h3>
+                        <p>Criação e gravação das obras. Diálogo entre artistas e Orion Nova.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">30 NOV</div>
+                    <div class="timeline-content">
+                        <h3>Evento Presencial Artístico</h3>
+                        <p>Comemoração dos 3 anos do ChatGPT — ação performática no FMIS Lapa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">01 DEZ</div>
+                    <div class="timeline-content">
+                        <h3>Lançamento Online</h3>
+                        <p>Travessia Lapa → Copacabana. Galeria virtual "Mapa da Travessia" ao vivo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">DEZ 2025</div>
+                    <div class="timeline-content">
+                        <h3>Planejamento 2026</h3>
+                        <p>Ampliação do legado de travessia. Novos artistas, novas obras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">08</div>
+    </section>
 
-<div class="slide">
-  <h2>Legado 2026</h2>
-  <div class="section-highlight">
-  <p>Em 2026, o FMIS se espalha por três territórios históricos:</p>
-  <ul>
-    <li><strong>Praça XV</strong> — ações urbanas e performances interativas.</li>
-    <li><strong>Lapa</strong> — núcleo de memória viva e escuta afetiva.</li>
-    <li><strong>Copacabana</strong> — nova sede do diálogo arte + tecnologia.</li>
-  </ul>
-  </div>
-</div>
-
-<div class="slide">
-  <div class="fecho">
-    <h2>“A IA responde. O humano cria. O museu aprende.<br>E na ponte entre mundos, a memória atravessa o futuro.”</h2>
-    <p>Orion Nova · Curadoria Digital 2025 · EloEssencial∞</p>
-  </div>
-</div>
-
-<div class="nav">
-  <button id="prevBtn" class="disabled">← Anterior</button>
-  <button id="nextBtn">Próxima →</button>
-</div>
-
-<script>
-  const slides=document.querySelectorAll('.slide');
-  let i=0;
-  const showSlide=idx=>{
-    slides.forEach((s,j)=>s.classList.toggle('active',j===idx));
-    document.getElementById('prevBtn').classList.toggle('disabled',idx===0);
-    document.getElementById('nextBtn').classList.toggle('disabled',idx===slides.length-1);
-  };
-  document.getElementById('prevBtn').onclick=()=>{if(i>0){i--;showSlide(i)}};
-  document.getElementById('nextBtn').onclick=()=>{if(i<slides.length-1){i++;showSlide(i)}};
-  document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'&&i<slides.length-1){i++;showSlide(i);}
-    if(e.key==='ArrowLeft'&&i>0){i--;showSlide(i);}
-  });
-  const valores=document.querySelectorAll('#orcamento td:last-child');
-  let total=0;valores.forEach(v=>total+=parseInt(v.textContent.trim()));
-  document.getElementById('total').textContent=total.toLocaleString('pt-BR');
-  showSlide(0);
-</script>
-</body>
-</html>
+    <!-- Slide 9: ORÇAMENTO -->
+    <section class="slide slide-9">
+        <div class="budget">
+            <h1>ORÇAMENTO BASE</h1>
+            <div class="budget-table">
+                <div class="budget-row">
+                    <div class="budget-category">Produção Audiovisual</div>
+                    <div>Gravação e edição de 5 vídeos</div>
+                    <div style="text-align: right;">R$ 6.000</div>
+                </div>
+                <div class="budget-row">
+                    <div class="budget-category">Luz & Som</div>
+                    <div>Iluminação, som e apoio técnico</div>
+                    <div style="text-align: right;">R$ 5.000</div>
+                </div>
+                <div class="budget-row">
+                    <div class="budget-category">Artistas</div>
+                    <div>Ajuda de custo simbólica (5 artistas)</div>
+                    <div style="text-align: right;">R$ 5.000</div>
+                </div>
+                <div class="budget-row">
+                    <div class="budget-category">Reserva Técnica</div>
+                    <div>Imprevistos e ajustes</div>
+                    <div style="text-align: right;">R$ 3.000</div>
+                </div>
+                <div class="budget-row">
+                    <div class="budget
